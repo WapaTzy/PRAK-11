@@ -3,7 +3,7 @@
 using namespace std;
 
 class dokter;
-class pasien { 
+class pasien { // asosiasi
 public:
     string nama;
     vector<dokter*> daftar_dokter;
@@ -39,7 +39,8 @@ void pasien::tambahDokter(dokter* pDokter) {
 
 void pasien::cetakDokter() {
     cout << "Daftar Dokter yang menangani pasien \"" << this->nama << "\":\n";
-    for (auto& a : daftar_dokter) { 
+    for (auto& a : daftar_dokter) { // auto digunakan dalam perulangan untuk secara otomatis menentukan tipe data dari elemen yang diiterasi
+        cout << a->nama << "\n";
     }
     cout << endl;
 }
